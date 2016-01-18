@@ -1,0 +1,23 @@
+{
+  "id": 398154,
+  "type": "customer.deleted",
+  "customer": {
+    "customer_id": "578266",
+    "customer_ext_uid": null,
+    "hash": "hash123",
+    "customer_number": "0077",
+    "companyname": "Muster GmbH",
+    "title": "Dr.",
+    "salutation": "Herr",
+    "firstname": "Martin",
+    "lastname": "Muster",
+    "address": "Am Musterhuegel 12",
+    "address_2": "",
+    "zipcode": "01234",
+    "city": "Musterhausen",
+    "country_code": "DE",
+    "email": "m.muster@email.de",
+    "payment_data_url": "https://automatic.fastbill.com/accountdata/a1/payment_data_url",
+    "dashboard_url": "https://automatic.fastbill.com/dashboard/a1/dashboard_url"
+  }
+}
