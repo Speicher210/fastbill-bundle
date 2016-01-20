@@ -1,4 +1,4 @@
-# Symfony Fastbill API bundle
+# Symfony Fastbill Automatic API bundle
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Symfony Bundle for Fastbill API.
+Symfony Bundle for FastBill Automatic API.
 
 ## Install
 
