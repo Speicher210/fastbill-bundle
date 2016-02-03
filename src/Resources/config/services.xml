@@ -16,7 +16,12 @@
             <argument type="service">
                 <service class="JMS\Serializer\Serializer">
                     <factory method="build">
-                        <service class="JMS\Serializer\SerializerBuilder">
+                        <service class="Speicher210\FastbillBundle\Serializer\SerializerBuilder">
+                            <call method="addHandler">
+                                <argument type="service">
+                                    <service class="Speicher210\Fastbill\Api\Serializer\Handler\DateHandler"/>
+                                </argument>
+                            </call>
                             <call method="create"/>
                         </service>
                     </factory>
