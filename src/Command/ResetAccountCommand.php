@@ -57,13 +57,13 @@ class ResetAccountCommand extends ContainerAwareCommand
             ->addOption(
                 'skip-id',
                 null,
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
                 'Customer ID to skip'
             )
             ->addOption(
                 'skip-ext-id',
                 null,
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
                 'Customer external ID to skip'
             );
     }
@@ -109,8 +109,8 @@ class ResetAccountCommand extends ContainerAwareCommand
         $apiResponse = $customerService->getCustomers($requestData);
         $customers = $apiResponse->getResponse()->getCustomers();
 
-        $idToSkip = $this->input->getOption('skip-id');
-        $externalIdToSkip = $this->input->getOption('skip-ext-id');
+        $idsToSkip = $this->input->getOption('skip-id');
+        $externalIdsToSkip = $this->input->getOption('skip-ext-id');
 
         if (count($customers) === 0) {
             $this->output->writeln('<info>No customers to reset.</info>');
@@ -119,17 +119,9 @@ class ResetAccountCommand extends ContainerAwareCommand
         }
 
         foreach ($customers as $customer) {
-            if ($idToSkip && $customer->getCustomerId() == $idToSkip) {
-                $infoMsg = sprintf(
-                    '<info>Skipping resetting customer %s (ext. id: %s)</info>',
-                    $customer->getCustomerId(),
-                    $customer->getCustomerExternalUid()
-                );
-                $this->output->writeln($infoMsg);
-
-                continue;
-            }
-            if ($externalIdToSkip && $customer->getCustomerExternalUid() == $externalIdToSkip) {
+            if (in_array($customer->getCustomerId(), $idsToSkip)
+                || in_array($customer->getCustomerExternalUid(), $externalIdsToSkip)
+            ) {
                 $infoMsg = sprintf(
                     '<info>Skipping resetting customer %s (ext. id: %s)</info>',
                     $customer->getCustomerId(),
