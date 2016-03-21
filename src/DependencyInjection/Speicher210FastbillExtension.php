@@ -9,8 +9,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
  * This is the class that loads and manages your bundle configuration
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
 class Speicher210FastbillExtension extends Extension
 {
@@ -28,6 +26,7 @@ class Speicher210FastbillExtension extends Extension
         $container
             ->getDefinition('speicher210_fastbill.api_credentials')
             ->addArgument($config['username'])
-            ->addArgument($config['api_key']);
+            ->addArgument($config['api_key'])
+            ->addArgument($config['account_hash']);
     }
 }

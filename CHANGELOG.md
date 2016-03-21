@@ -4,6 +4,12 @@ All Notable changes to `speicher210/fastbill-bundle` will be documented in this 
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [1.2.0] 2016-03-21
+
+### Added
+- [BC BREAK] Updated to latest API version (check API for BC BREAK info)
+- Added support for account hash configuration
+
 ## [1.1.1] 2016-02-04
 
 ### Added
