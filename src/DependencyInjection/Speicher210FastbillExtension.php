@@ -23,6 +23,10 @@ class Speicher210FastbillExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
+        if ($container->getParameter('kernel.debug') === true) {
+            $loader->load('collector.xml');
+        }
+
         $container
             ->getDefinition('speicher210_fastbill.api_credentials')
             ->addArgument($config['username'])
