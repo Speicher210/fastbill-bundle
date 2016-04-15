@@ -6,13 +6,11 @@
 
     <services>
         <service id="speicher210_fastbill.api_credentials" class="Speicher210\Fastbill\Api\ApiCredentials"/>
-        <service id="speicher210_fastbill.service.abstract" class="Speicher210\Fastbill\Api\AbstractService"
-                 abstract="true" public="false">
-            <argument type="service">
-                <service class="Speicher210\Fastbill\Api\Transport\GuzzleTransport">
-                    <argument type="service" id="speicher210_fastbill.api_credentials"/>
-                </service>
-            </argument>
+        <service id="speicher210_fastbill.transport" class="Speicher210\Fastbill\Api\Transport\GuzzleTransport">
+            <argument type="service" id="speicher210_fastbill.api_credentials"/>
+        </service>
+        <service id="speicher210_fastbill.service.abstract" class="Speicher210\Fastbill\Api\AbstractService" abstract="true" public="false">
+            <argument type="service" id="speicher210_fastbill.transport"/>
             <argument type="service">
                 <service class="JMS\Serializer\Serializer">
                     <factory method="build">
