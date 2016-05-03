@@ -2,8 +2,6 @@
 
 namespace Speicher210\FastbillBundle\Event;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * Event when a subscription is closed.
  */

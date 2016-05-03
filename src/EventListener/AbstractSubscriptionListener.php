@@ -6,6 +6,7 @@ use Speicher210\FastbillBundle\Event\SubscriptionCanceledEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionChangedEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionClosedEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionCreatedEvent;
+use Speicher210\FastbillBundle\Event\SubscriptionReactivatedEvent;
 use Speicher210\FastbillBundle\FastbillNotificationEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -14,7 +15,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 abstract class AbstractSubscriptionListener implements EventSubscriberInterface
 {
-
     /**
      * Handle creating a subscription.
      *
@@ -41,8 +41,15 @@ abstract class AbstractSubscriptionListener implements EventSubscriberInterface
      *
      * @param SubscriptionClosedEvent $event The raised event.
      */
-
     abstract public function onSubscriptionClosed(SubscriptionClosedEvent $event);
+
+    /**
+     * Handle reactivating a subscription.
+     *
+     * @param SubscriptionReactivatedEvent $event The raised event.
+     */
+    abstract public function onSubscriptionReactivated(SubscriptionReactivatedEvent $event);
+
     /**
      * {@inheritdoc}
      */
@@ -52,7 +59,8 @@ abstract class AbstractSubscriptionListener implements EventSubscriberInterface
             FastbillNotificationEvents::INCOMING_SUBSCRIPTION_CREATED => 'onSubscriptionCreated',
             FastbillNotificationEvents::INCOMING_SUBSCRIPTION_CHANGED => 'onSubscriptionChanged',
             FastbillNotificationEvents::INCOMING_SUBSCRIPTION_CANCELED => 'onSubscriptionCanceled',
-            FastbillNotificationEvents::INCOMING_SUBSCRIPTION_CLOSED => 'onSubscriptionClosed'
+            FastbillNotificationEvents::INCOMING_SUBSCRIPTION_CLOSED => 'onSubscriptionClosed',
+            FastbillNotificationEvents::INCOMING_SUBSCRIPTION_REACTIVATED => 'onSubscriptionReactivated'
         );
     }
 }

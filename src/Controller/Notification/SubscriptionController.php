@@ -6,10 +6,12 @@ use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionCancele
 use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionChangedNotification;
 use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionClosedNotification;
 use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionCreatedNotification;
+use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionReactivatedNotification;
 use Speicher210\FastbillBundle\Event\SubscriptionCanceledEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionChangedEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionClosedEvent;
 use Speicher210\FastbillBundle\Event\SubscriptionCreatedEvent;
+use Speicher210\FastbillBundle\Event\SubscriptionReactivatedEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,7 +20,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class SubscriptionController extends AbstractController
 {
-
     /**
      * Action when a subscription is created.
      *
@@ -69,5 +70,18 @@ class SubscriptionController extends AbstractController
         $event = new SubscriptionClosedEvent();
 
         return $this->handleNotification($request, $event, SubscriptionClosedNotification::class);
+    }
+
+    /**
+     * Action when a subscription is reactivated.
+     *
+     * @param Request $request The made request.
+     * @return Response
+     */
+    public function reactivatedAction(Request $request)
+    {
+        $event = new SubscriptionReactivatedEvent();
+
+        return $this->handleNotification($request, $event, SubscriptionReactivatedNotification::class);
     }
 }

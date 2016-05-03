@@ -3,15 +3,15 @@
 namespace Speicher210\FastbillBundle\Event;
 
 /**
- * Event when a payment failed.
+ * Event when a subscription is reactivated.
  */
-class PaymentFailedEvent extends AbstractNotificationEvent
+class SubscriptionReactivatedEvent extends AbstractNotificationEvent
 {
     /**
      * {@inheritdoc}
      */
     public static function getNotificationType()
     {
-        return 'payment.failed';
+        return 'subscription.reactivated';
     }
 }

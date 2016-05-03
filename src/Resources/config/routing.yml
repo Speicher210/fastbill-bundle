@@ -22,6 +22,12 @@ speicher210_fastbill_notification_subscription_closed:
   defaults:
     _controller: Speicher210FastbillBundle:Notification/Subscription:closed
 
+speicher210_fastbill_notification_subscription_reactivated:
+  path: /notification/subscription/reactivated
+  methods: [POST]
+  defaults:
+    _controller: Speicher210FastbillBundle:Notification/Subscription:reactivated
+
 speicher210_fastbill_notification_customer_created:
   path: /notification/customer/created
   methods: [POST]
