@@ -1,5 +1,5 @@
 .idea/
 build
 composer.lock
-docs
 vendor
+phpunit.xml
