@@ -4,10 +4,15 @@ All Notable changes to `speicher210/fastbill-bundle` will be documented in this 
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## [1.5.0] 2016-05-03
+## [1.6.0] 2016-05-03
 
 ### Changed
 - [BC BREAK] Added handler for subscription reactivated. If you extend `AbstractSubscriptionListener` you have to implement `onSubscriptionReactivated` method.
+
+## [1.5.0] 2016-04-15
+
+### Added
+- Added DataCollector
 
 ## [1.4.0] 2016-03-29
 
