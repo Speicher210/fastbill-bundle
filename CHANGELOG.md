@@ -2,7 +2,10 @@
 
 All Notable changes to `speicher210/fastbill-bundle` will be documented in this file.
 
-Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+## [1.7.0] 2016-05-23
+
+### Changed
+- Updated to latest Fastbill API version (Now `\DateTime` are set correctly).
 
 ## [1.6.0] 2016-05-03
 

@@ -9,22 +9,22 @@
         <service id="speicher210_fastbill.transport" class="Speicher210\Fastbill\Api\Transport\GuzzleTransport">
             <argument type="service" id="speicher210_fastbill.api_credentials"/>
         </service>
+        <service id="speicher210_fastbill.serializer" class="JMS\Serializer\Serializer">
+            <factory method="build">
+                <service class="Speicher210\FastbillBundle\Serializer\SerializerBuilder">
+                    <call method="addHandler">
+                        <argument type="service">
+                            <service class="Speicher210\Fastbill\Api\Serializer\Handler\DateHandler"/>
+                        </argument>
+                    </call>
+                    <call method="create"/>
+                </service>
+            </factory>
+        </service>
+
         <service id="speicher210_fastbill.service.abstract" class="Speicher210\Fastbill\Api\AbstractService" abstract="true" public="false">
             <argument type="service" id="speicher210_fastbill.transport"/>
-            <argument type="service">
-                <service class="JMS\Serializer\Serializer">
-                    <factory method="build">
-                        <service class="Speicher210\FastbillBundle\Serializer\SerializerBuilder">
-                            <call method="addHandler">
-                                <argument type="service">
-                                    <service class="Speicher210\Fastbill\Api\Serializer\Handler\DateHandler"/>
-                                </argument>
-                            </call>
-                            <call method="create"/>
-                        </service>
-                    </factory>
-                </service>
-            </argument>
+            <argument type="service" id="speicher210_fastbill.serializer"/>
         </service>
 
         <service id="speicher210_fastbill.service.customer" parent="speicher210_fastbill.service.abstract" public="true"

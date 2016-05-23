@@ -1,11 +1,11 @@
 <?php
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\SerializerBundle\JMSSerializerBundle;
 use Speicher210\FastbillBundle\Speicher210FastbillBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Doctrine\Common\Annotations\AnnotationRegistry;
 
 /**
  * AppKernel for testing.
@@ -47,7 +47,7 @@ class AppKernel extends Kernel
      */
     public function getCacheDir()
     {
-        return sys_get_temp_dir().DIRECTORY_SEPARATOR.'Speicher210FastbillBundle'.DIRECTORY_SEPARATOR.'/Cache/';
+        return sys_get_temp_dir().'/Speicher210FastbillBundle/Cache/';
     }
 
     /**
@@ -55,6 +55,6 @@ class AppKernel extends Kernel
      */
     public function getLogDir()
     {
-        return sys_get_temp_dir().DIRECTORY_SEPARATOR.'Speicher210FastbillBundle'.DIRECTORY_SEPARATOR.'/Log/';
+        return sys_get_temp_dir().'/Speicher210FastbillBundle/Log/';
     }
 }

@@ -16,6 +16,9 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class PaymentChargebackActionControllerTest extends AbstractControllerTestCase
 {
+    /**
+     * @group ttt
+     */
     public function testChargebackActionReturns204AndRaisesEventIfRequestIsValid()
     {
         $client = parent::createClient();
@@ -30,7 +33,7 @@ class PaymentChargebackActionControllerTest extends AbstractControllerTestCase
                 $expectedPayloadData
                     ->setId(398160)
                     ->setType('payment.chargeback')
-                    ->setCreated(new \DateTime('2014-03-13T11:37:08+0000'))
+                    ->setCreated(new \DateTime('2014-03-13T10:37:08+0000'))
                     ->setCustomer(
                         (new Customer())
                             ->setCustomerId(578266)

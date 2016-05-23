@@ -59,7 +59,7 @@ abstract class AbstractController extends Controller
 
         try {
             return $this
-                ->get('jms_serializer')
+                ->get('speicher210_fastbill.serializer')
                 ->deserialize(
                     $request->getContent(),
                     $payloadDataClass,

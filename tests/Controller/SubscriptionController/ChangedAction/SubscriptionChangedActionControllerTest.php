@@ -29,7 +29,7 @@ class SubscriptionChangedActionControllerTest extends AbstractControllerTestCase
                 $expectedPayloadData
                     ->setId(398154)
                     ->setType('subscription.changed')
-                    ->setCreated(new \DateTime('2014-03-13T11:36:04+0000'))
+                    ->setCreated(new \DateTime('2014-03-13T10:36:04+0000'))
                     ->setCustomer(
                         (new Customer())->setCustomerId(578266)
                             ->setHash('hash123')
@@ -49,12 +49,12 @@ class SubscriptionChangedActionControllerTest extends AbstractControllerTestCase
                     )
                     ->setSubscription(
                         (new Subscription())
-                            ->setStartDate(new \DateTime('2014-03-13T11:36:04+0000'))
-                            ->setLastEvent(new \DateTime('2014-03-13T11:36:04+0000'))
-                            ->setNextEvent(new \DateTime('2014-03-20T11:36:04+0000'))
-                            ->setCancellationDate(new \DateTime('0000-00-00T00:00:00+0000'))
+                            ->setStartDate(new \DateTime('2014-03-13T10:36:04+0000'))
+                            ->setLastEvent(new \DateTime('2014-03-13T10:36:04+0000'))
+                            ->setNextEvent(new \DateTime('2014-03-20T10:36:04+0000'))
+                            ->setCancellationDate(null)
                             ->setStatus('trial')
-                            ->setExpirationDate(new \DateTime('2014-03-20T11:36:04+0000'))
+                            ->setExpirationDate(new \DateTime('2014-03-20T10:36:04+0000'))
                             ->setSubscriptionId(216084)
                             ->setHash('hash123')
                             ->setArticleCode(72)

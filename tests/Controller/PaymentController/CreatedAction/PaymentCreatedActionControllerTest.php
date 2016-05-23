@@ -30,7 +30,7 @@ class PaymentCreatedActionControllerTest extends AbstractControllerTestCase
                 $expectedPayloadData
                     ->setId(398160)
                     ->setType('payment.created')
-                    ->setCreated(new \DateTime('2014-03-13T11:37:08+0000'))
+                    ->setCreated(new \DateTime('2014-03-13T10:37:08+0000'))
                     ->setCustomer(
                         (new Customer())
                             ->setCustomerId(578266)
