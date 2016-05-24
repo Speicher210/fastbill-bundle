@@ -2,6 +2,14 @@
 
 All Notable changes to `speicher210/fastbill-bundle` will be documented in this file.
 
+## [1.7.1] 2016-05-24
+
+### Changed
+- Updated to latest Fastbill API version to fix the serialization of some model properties.
+
+### Fixed
+- Profiler icon.
+
 ## [1.7.0] 2016-05-23
 
 ### Changed

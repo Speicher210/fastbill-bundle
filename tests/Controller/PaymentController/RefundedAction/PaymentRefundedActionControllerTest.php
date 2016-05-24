@@ -34,8 +34,9 @@ class PaymentRefundedActionControllerTest extends AbstractControllerTestCase
                     ->setCustomer(
                         (new Customer())
                             ->setCustomerId(578266)
+                            ->setCustomerExternalId('id_007')
+                            ->setCustomerNumber('cn_77')
                             ->setHash('hash123')
-                            ->setCustomerNumber(77)
                             ->setCompanyName('Muster GmbH')
                             ->setTitle('Dr.')
                             ->setSalutation('Herr')

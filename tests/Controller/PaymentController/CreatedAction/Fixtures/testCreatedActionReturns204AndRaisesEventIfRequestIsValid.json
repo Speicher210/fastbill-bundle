@@ -3,9 +3,9 @@
   "type": "payment.created",
   "customer": {
     "customer_id": "578266",
-    "customer_ext_uid": null,
+    "customer_ext_uid": "id_007",
     "hash": "hash123",
-    "customer_number": "0077",
+    "customer_number": "cn_77",
     "companyname": "Muster GmbH",
     "title": "Dr.",
     "salutation": "Herr",

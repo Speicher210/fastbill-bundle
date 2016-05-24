@@ -34,8 +34,9 @@ class PaymentCreatedActionControllerTest extends AbstractControllerTestCase
                     ->setCustomer(
                         (new Customer())
                             ->setCustomerId(578266)
+                            ->setCustomerExternalId('id_007')
                             ->setHash('hash123')
-                            ->setCustomerNumber(77)
+                            ->setCustomerNumber('cn_77')
                             ->setCompanyName('Muster GmbH')
                             ->setTitle('Dr.')
                             ->setSalutation('Herr')

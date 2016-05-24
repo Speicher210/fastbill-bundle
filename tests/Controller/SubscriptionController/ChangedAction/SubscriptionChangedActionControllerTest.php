@@ -32,8 +32,9 @@ class SubscriptionChangedActionControllerTest extends AbstractControllerTestCase
                     ->setCreated(new \DateTime('2014-03-13T10:36:04+0000'))
                     ->setCustomer(
                         (new Customer())->setCustomerId(578266)
+                            ->setCustomerExternalId('id_007')
+                            ->setCustomerNumber('cn_77')
                             ->setHash('hash123')
-                            ->setCustomerNumber(77)
                             ->setCompanyName('Muster GmbH')
                             ->setTitle('Dr.')
                             ->setSalutation('Herr')
@@ -57,7 +58,7 @@ class SubscriptionChangedActionControllerTest extends AbstractControllerTestCase
                             ->setExpirationDate(new \DateTime('2014-03-20T10:36:04+0000'))
                             ->setSubscriptionId(216084)
                             ->setHash('hash123')
-                            ->setArticleCode(72)
+                            ->setArticleCode('PRODUCT_CODE')
                             ->setQuantity(1)
                     );
 
