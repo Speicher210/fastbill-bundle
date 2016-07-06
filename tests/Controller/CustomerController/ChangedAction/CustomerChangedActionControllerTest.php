@@ -43,6 +43,7 @@ class CustomerChangedActionControllerTest extends AbstractControllerTestCase
                             ->setZipCode('01234')
                             ->setCity('Musterhausen')
                             ->setCountryCode('DE')
+                            ->setPhone('+491234567')
                             ->setEmail('m.muster@email.de')
                             ->setPaymentDataUrl('https://automatic.fastbill.com/accountdata/a1/payment_data_url')
                             ->setDashboardUrl('https://automatic.fastbill.com/dashboard/a1/dashboard_url')

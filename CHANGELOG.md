@@ -2,10 +2,15 @@
 
 All Notable changes to `speicher210/fastbill-bundle` will be documented in this file.
 
+## [1.7.3] 2016-07-06
+
+### Changed
+- Update to latest API version (uses app.monsum.com domain for API calls).
+
 ## [1.7.2] 2016-06-10
 
 ### Changed
-- [BC BREAK] Updated to latest API version (check API for BC BREAK info)
+- [BC BREAK] Updated to latest API version (check API for BC BREAK info).
 
 ## [1.7.1] 2016-05-24
 
