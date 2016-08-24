@@ -2,6 +2,11 @@
 
 All Notable changes to `speicher210/fastbill-bundle` will be documented in this file.
 
+## [1.7.4] 2016-08-24
+
+### Fixed
+- Require fastbill-api version 1.5.6 (fixes and issue with article checkout URL).
+
 ## [1.7.3] 2016-07-06
 
 ### Changed
